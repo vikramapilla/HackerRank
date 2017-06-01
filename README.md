@@ -1,4 +1,4 @@
 # HackerRank
-HackerRank Algorithms Project
+HackerRank Project
 
-This repository consists of the solutions to the problems that I solved on HackerRank algorithms section.
+This repository consists of the solutions to the problems that I solved on HackerRank.
