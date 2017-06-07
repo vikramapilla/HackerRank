@@ -88,4 +88,89 @@ done
 
 printf "%.3f" $(echo $sum/$n | bc -l)
 
+#11. Functions and Fractals - Recursive Trees - Bash!
 
+read n
+n=$((6-$n))
+lines=$((2**$n-1))
+for ((i=1; i<=lines; i++))
+do
+    for j in {1..100..1}
+    do
+        printf "_"
+    done
+     printf "\n"
+done
+
+for ((t=n; t<=5; t++))
+do
+    p=$((2**($t-1)))
+    
+    for ((k=1; k<=p; k++))
+    do
+        for ((i=1; i<=18+p+k-2; i++))
+        do
+            printf "_"
+        done
+        
+        m=$((2**(5-$t)))
+        for ((z=1; z<=m; z++))
+        do
+            printf "1"
+
+            for ((i=((p*2)-1)-((k-1)*2); i>=1; i--))
+            do
+                printf "_"
+            done
+
+            printf "1"
+            
+            if (($z < $m))
+            then
+                for ((i=1; i<=((p*2)-1)+((k-1)*2); i++))
+                do
+                    printf "_"
+                done
+            fi
+        done
+        
+        for ((i=1; i<=18+p+k-1; i++))
+        do
+            printf "_"
+        done
+        
+        
+        printf "\n"
+    done
+    
+    for ((k=1; k<=p; k++))
+    do
+        for ((i=1; i<=18+(p*2)-1; i++))
+        do
+            printf "_"
+        done
+        
+        m=$((2**(5-$t)))
+        for ((z=1; z<=m; z++))
+        do
+            printf "1"
+            
+            if (($z < $m))
+            then
+                for ((i=1; i<=((p*2)-1)+((p-1)*2)+2; i++))
+                do
+                    printf "_"
+                done
+            fi     
+         done
+   
+        for ((i=1; i<=18+(p*2); i++))
+        do
+            printf "_"
+        done
+
+        
+        printf "\n"
+    done
+    
+done
