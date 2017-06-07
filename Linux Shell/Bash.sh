@@ -168,7 +168,6 @@ do
         do
             printf "_"
         done
-
         
         printf "\n"
     done
